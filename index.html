@@ -721,6 +721,7 @@ footer {
 .clientes-track-wrap {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 .clientes-track-wrap::before,
 .clientes-track-wrap::after {
@@ -742,6 +743,8 @@ footer {
   gap: 0;
   width: max-content;
   animation: clientesScroll 45s linear infinite;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .clientes-track:hover { animation-play-state: paused; }
 @keyframes clientesScroll {
@@ -750,6 +753,8 @@ footer {
 }
 .clientes-track.reverse {
   animation-name: clientesScrollReverse;
+  animation-duration: 61s;
+  animation-delay: -14s;
 }
 @keyframes clientesScrollReverse {
   from { transform: translateX(-50%); }
